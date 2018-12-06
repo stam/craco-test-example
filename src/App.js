@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { observable } from 'mobx';
+import { observer} from 'mobx-react';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  @observable foo = 'bar';
+
   render() {
     return (
       <div className="App">
@@ -25,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default observer(App);
